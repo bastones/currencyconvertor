@@ -79,7 +79,7 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
     protected function convert()
     {
         if (empty($this->from) || empty($this->to)) {
-            throw new InvalidArgumentException('Cannot convert without two valid currencies.');
+            throw new InvalidArgumentException('Cannot convert without two valid currencies');
         }
 
         return $this->with * $this->getExchangeRate();
