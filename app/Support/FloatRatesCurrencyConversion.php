@@ -82,7 +82,26 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
             throw new InvalidArgumentException('Cannot convert without two valid currencies');
         }
 
-        return $this->with * $this->getExchangeRate();
+        $exchangeRate = $this->getExchangeRate();
+
+        $from = [
+            'code' => $this->from,
+            'amount' => number_format($this->with),
+        ];
+
+        $to = [
+            'code' => $this->to,
+            'amount' => number_format($this->with * $exchangeRate, 6),
+        ];
+
+        return [
+            'from' => $this->from,
+            'to' => $this->to,
+            'result' => [
+                'amount' => $to['amount'],
+                'description' => $from['amount'] . ' ' . $from['code'] . ' = ' . $to['amount'] . ' ' . $to['code'],
+            ],
+        ];
     }
 
     /**
@@ -90,6 +109,13 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
      */
     protected function getExchangeRate()
     {
+        // Check if the client is attempting to convert between two identical currencies
+        if ($this->from === $this->to) {
+            // Return a fixed exchange rate to prevent further logic attempting to retrieve a non-existent property
+            return 1;
+        }
+
+        // Check if the exchange rate is cached. Otherwise, retrieve the exchange rate and cache it for future requests
         if (cache()->has($this->from)) {
             $to = strtolower($this->to);
 
