@@ -19,8 +19,8 @@ interface CurrencyConversion
     public function to(string $code);
 
     /**
-     * @param int $amount
+     * @param float $amount
      * @return CurrencyConversion
      */
-    public function with(int $amount);
+    public function with(float $amount);
 }
