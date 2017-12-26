@@ -2,6 +2,8 @@
 
 namespace App\Traits;
 
+use InvalidArgumentException;
+
 trait CurrencyCodes
 {
     /**
@@ -11,6 +13,12 @@ trait CurrencyCodes
         'USD',
         'EUR',
         'GBP',
+        'AUD',
+        'CAD',
+        'INR',
+        'CNY',
+        'JPY',
+        'NZD',
     ];
 
     /**
