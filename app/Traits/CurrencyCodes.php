@@ -38,7 +38,7 @@ trait CurrencyCodes
     protected function validateOrFail(string $code)
     {
         if (! $this->validate($code)) {
-            throw new InvalidArgumentException('An invalid currency code was provided.');
+            throw new InvalidArgumentException('An invalid currency code was provided');
         }
 
         return true;
