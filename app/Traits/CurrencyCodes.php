@@ -18,6 +18,7 @@ trait CurrencyCodes
         'INR',
         'CNY',
         'JPY',
+        'HKD',
         'NZD',
     ];
 
