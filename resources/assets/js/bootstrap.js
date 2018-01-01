@@ -9,9 +9,19 @@ window._ = require('lodash');
 window.$ = window.jQuery = require('jquery');
 
 /**
+ * PopperJS Library
+ */
+window.Popper = require('popper.js');
+
+/**
  * Bootstrap Library
  */
 require('bootstrap');
+
+/**
+ * Vue JS
+ */
+window.Vue = require('vue');
 
 /**
  * Axios Library
