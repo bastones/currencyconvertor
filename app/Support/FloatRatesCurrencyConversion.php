@@ -63,7 +63,7 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
 
     /**
      * @param float $amount
-     * @return int
+     * @return array
      */
     public function with(float $amount)
     {
@@ -73,7 +73,7 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
     }
 
     /**
-     * @return int
+     * @return array
      * @throws InvalidArgumentException
      */
     protected function convert()
