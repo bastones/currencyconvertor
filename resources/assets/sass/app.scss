@@ -1,9 +1,22 @@
+/**
+ * Import the dependencies
+ */
+@import "~bootstrap/scss/bootstrap";
+@import "~open-iconic/font/css/open-iconic";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
-// Variables
-@import "variables";
+html, body {
+    height: 100%;
+}
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+div.alert span.oi {
+    position: relative;
+    top: 1px;
+    margin-right: 5px;
+}
+
+button span.oi {
+    position: relative;
+    top: 1px;
+    margin-left: 5px;
+}
