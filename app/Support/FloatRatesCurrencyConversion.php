@@ -14,26 +14,36 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
     use CurrencyCodes;
 
     /**
+     * ISO code of the currency to convert from.
+     *
      * @var string
      */
     protected $from;
 
     /**
+     * ISO code of the currency to convert to.
+     *
      * @var string
      */
     protected $to;
 
     /**
-     * @var int
+     * The sum or amount of the conversion.
+     *
+     * @var float
      */
     protected $with;
 
     /**
+     * Resource location of the external API.
+     *
      * @var string
      */
     protected $source = 'https://www.floatrates.com/daily/';
 
     /**
+     * Validate and store the currency to convert from.
+     *
      * @param string $code
      * @return $this
      * @throws InvalidArgumentException
@@ -48,6 +58,8 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
     }
 
     /**
+     * Validate and store the currency to convert to.
+     *
      * @param string $code
      * @return $this
      * @throws InvalidArgumentException
@@ -73,6 +85,8 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
     }
 
     /**
+     * Perform the currency conversion and return the result.
+     *
      * @return array
      * @throws InvalidArgumentException
      */
@@ -98,6 +112,9 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
     }
 
     /**
+     * Get the exchange data from the external provider.
+     *
+     * @throws RuntimeException
      * @return int
      */
     protected function getExchangeRate()
