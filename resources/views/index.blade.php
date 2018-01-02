@@ -17,6 +17,8 @@
         </div>
 
         <div class="alert alert-danger mt-4 p-3 rounded d-none" :class="{ 'd-block': error.display }">
+            <span class="oi" data-glyph="warning"></span>
+
             @{{ error.description }}
         </div>
 

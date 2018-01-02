@@ -9,6 +9,12 @@ html, body {
     height: 100%;
 }
 
+div.alert span.oi {
+    position: relative;
+    top: 1px;
+    margin-right: 5px;
+}
+
 button span.oi {
     position: relative;
     top: 1px;
