@@ -26,8 +26,8 @@
                     <div class="input-group">
                         <span class="input-group-addon oi" data-glyph="info"></span>
 
-                        <input class="form-control input-lg" type="text" name="amount" placeholder="Enter a value..."
-                               v-model="amount" required>
+                        <input id="amount" class="form-control input-lg" type="text" name="amount" placeholder="Enter a value..."
+                               v-model="amount" autofocus required>
                     </div>
                 </div>
 
