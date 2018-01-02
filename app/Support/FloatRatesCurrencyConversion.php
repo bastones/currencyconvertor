@@ -40,7 +40,7 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
      */
     public function from(string $code)
     {
-        $this->validateOrFail($code);
+        $this->validateCurrencyOrFail($code);
 
         $this->from = $code;
 
@@ -54,7 +54,7 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
      */
     public function to(string $code)
     {
-        $this->validateOrFail($code);
+        $this->validateCurrencyOrFail($code);
 
         $this->to = $code;
 
