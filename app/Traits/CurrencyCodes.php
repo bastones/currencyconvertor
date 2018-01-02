@@ -7,6 +7,8 @@ use InvalidArgumentException;
 trait CurrencyCodes
 {
     /**
+     * A list of supported currencies.
+     *
      * @var array
      */
     protected $currencies = [
@@ -23,6 +25,8 @@ trait CurrencyCodes
     ];
 
     /**
+     * Validate the currency ISO code.
+     *
      * @param string $code
      * @return bool
      */
@@ -32,6 +36,8 @@ trait CurrencyCodes
     }
 
     /**
+     * Validate the currency ISO code, returning an exception on failure.
+     *
      * @param string $code
      * @return bool
      * @throws InvalidArgumentException
