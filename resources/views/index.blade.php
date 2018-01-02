@@ -16,11 +16,11 @@
 </head>
 <body>
     <div id="root" class="container">
-        <div class="mt-4 p-3 bg-dark rounded text-white d-none" :class="{ 'd-block': success.display }">
+        <div class="mt-4 p-3 bg-dark rounded text-white" v-if="success.display">
             @{{ success.description }}
         </div>
 
-        <div class="alert alert-danger mt-4 p-3 rounded d-none" :class="{ 'd-block': error.display }">
+        <div class="alert alert-danger mt-4 p-3 rounded" v-if="error.display">
             <span class="oi" data-glyph="warning"></span>
 
             @{{ error.description }}
