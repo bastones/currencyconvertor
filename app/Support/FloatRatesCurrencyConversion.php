@@ -84,22 +84,15 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
 
         $exchangeRate = $this->getExchangeRate();
 
-        $from = [
-            'code' => $this->from,
-            'amount' => number_format($this->with),
-        ];
-
-        $to = [
-            'code' => $this->to,
-            'amount' => number_format($this->with * $exchangeRate, 6),
-        ];
+        $formattedOriginalAmount = number_format($this->with, 2);
+        $formattedExchangeAmount = number_format($this->with * $exchangeRate, 2);
 
         return [
             'from' => $this->from,
             'to' => $this->to,
             'result' => [
-                'amount' => $to['amount'],
-                'description' => $from['amount'] . ' ' . $from['code'] . ' = ' . $to['amount'] . ' ' . $to['code'],
+                'amount' => $formattedExchangeAmount,
+                'description' => $formattedOriginalAmount. ' ' . $this->from . ' = ' . $formattedExchangeAmount . ' ' . $this->to,
             ],
         ];
     }

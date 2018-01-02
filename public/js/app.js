@@ -46651,13 +46651,11 @@ new Vue({
     data: {
         success: {
             display: false,
-
             description: ''
         },
 
         error: {
             display: false,
-
             description: 'An error occurred. Please try again.'
         },
 
