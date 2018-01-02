@@ -12,6 +12,6 @@ class ConversionController extends Controller
     {
         return $conversion->from($request->from)
             ->to($request->to)
-            ->with($request->amount);
+            ->with(preg_replace('/[^(?:\d+|\d*\.\d+)]/', '', $request->amount));
     }
 }
