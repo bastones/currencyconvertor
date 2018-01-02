@@ -46687,6 +46687,10 @@ new Vue({
                 _this.success.display = false;
                 _this.error.display = true;
             });
+
+            this.amount = '';
+
+            document.getElementById('amount').focus();
         }
     }
 });

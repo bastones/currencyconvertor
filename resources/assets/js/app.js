@@ -43,6 +43,10 @@ new Vue({
                 this.success.display = false;
                 this.error.display = true;
             });
+
+            this.amount = '';
+
+            document.getElementById('amount').focus();
         }
     }
 });
