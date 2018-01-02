@@ -46659,6 +46659,8 @@ new Vue({
             description: 'An error occurred. Please try again.'
         },
 
+        wait: false,
+
         from: Object.keys(currencies)[0],
         to: Object.keys(currencies)[1],
         amount: ''
@@ -46667,6 +46669,8 @@ new Vue({
     methods: {
         calculate: function calculate() {
             var _this = this;
+
+            this.wait = true;
 
             axios.post('api/convert', {
                 from: this.from,
@@ -46677,11 +46681,15 @@ new Vue({
                     accept: 'application/json'
                 }
             }).then(function (response) {
+                _this.wait = false;
+
                 _this.error.display = false;
 
                 _this.success.description = response.data.result.description;
                 _this.success.display = true;
             }).catch(function (error) {
+                _this.wait = false;
+
                 _this.success.display = false;
                 _this.error.display = true;
 

@@ -62,8 +62,16 @@
                 </div>
 
                 <div class="col-lg-3 pt-2 pb-2">
-                    <button type="submit" class="btn btn-block btn-dark">
-                        Convert <span class="oi" data-glyph="arrow-right"></span>
+                    <button type="submit" class="btn btn-block btn-dark" :disabled="wait">
+                        <div v-if="wait">
+                            Fetching...
+                        </div>
+
+                        <div v-else="wait">
+                            Convert
+
+                            <span class="oi" data-glyph="arrow-right"></span>
+                        </div>
                     </button>
                 </div>
             </div>
