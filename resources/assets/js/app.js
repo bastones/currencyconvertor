@@ -40,6 +40,8 @@ new Vue({
             }).catch((error) => {
                 this.success.display = false;
                 this.error.display = true;
+
+                this.amount = '';
             });
 
             document.getElementById('amount').focus();

@@ -46684,6 +46684,8 @@ new Vue({
             }).catch(function (error) {
                 _this.success.display = false;
                 _this.error.display = true;
+
+                _this.amount = '';
             });
 
             document.getElementById('amount').focus();
