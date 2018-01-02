@@ -84,7 +84,7 @@ class FloatRatesCurrencyConversion implements CurrencyConversion
 
         $exchangeRate = $this->getExchangeRate();
 
-        $formattedOriginalAmount = number_format($this->with, 2);
+        $formattedOriginalAmount = preg_replace('/^([0-9]+)(\.0{2,})$/', '$1', number_format($this->with, 2));
         $formattedExchangeAmount = number_format($this->with * $exchangeRate, 2);
 
         return [
