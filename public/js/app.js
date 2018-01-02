@@ -46659,8 +46659,8 @@ new Vue({
             description: 'An error occurred. Please try again.'
         },
 
-        from: 'GBP',
-        to: 'USD',
+        from: Object.keys(currencies)[0],
+        to: Object.keys(currencies)[1],
         amount: ''
     },
 
@@ -46685,8 +46685,6 @@ new Vue({
                 _this.success.display = false;
                 _this.error.display = true;
             });
-
-            this.amount = '';
 
             document.getElementById('amount').focus();
         }
