@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <title>Currency Convertor</title>
+
+    <script>
+        var currencies = {!! json_encode($currencies) !!};
+    </script>
 </head>
 <body>
     <div id="root" class="container">
@@ -28,8 +32,8 @@
                     <div class="input-group">
                         <span class="input-group-addon oi" data-glyph="info"></span>
 
-                        <input id="amount" class="form-control input-lg" type="text" name="amount" placeholder="Enter a value..."
-                               v-model="amount" autofocus required>
+                        <input id="amount" class="form-control input-lg" type="text" name="amount"
+                               placeholder="Enter a value..." v-model="amount" autofocus required>
                     </div>
                 </div>
 
@@ -38,9 +42,9 @@
                         <span class="input-group-addon oi" data-glyph="flag"></span>
 
                         <select class="form-control" name="first" v-model="from">
-                            <option value="USD" selected>US Dollar (USD)</option>
-                            <option value="GBP">British Pound (GBP)</option>
-                            <option value="EUR">Euro (EUR)</option>
+                            @foreach ($currencies as $code => $currency)
+                                <option value="{{ $code }}">{{ $currency }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -50,9 +54,9 @@
                         <span class="input-group-addon oi" data-glyph="flag"></span>
 
                         <select class="form-control" name="second" v-model="to">
-                            <option value="USD" selected>US Dollar (USD)</option>
-                            <option value="GBP">British Pound (GBP)</option>
-                            <option value="EUR">Euro (EUR)</option>
+                            @foreach ($currencies as $code => $currency)
+                                <option value="{{ $code }}">{{ $currency }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
